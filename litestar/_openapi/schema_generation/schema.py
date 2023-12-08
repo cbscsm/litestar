@@ -142,11 +142,6 @@ TYPE_MAP: dict[type[Any] | None | Any, Schema] = {
     time: Schema(type=OpenAPIType.STRING, format=OpenAPIFormat.DURATION),
     timedelta: Schema(type=OpenAPIType.STRING, format=OpenAPIFormat.DURATION),
     tuple: Schema(type=OpenAPIType.ARRAY),
-    UploadFile: Schema(
-        type=OpenAPIType.STRING,
-        content_media_type="application/octet-stream",
-        format=OpenAPIFormat.BINARY,
-    ),
 }
 
 
@@ -364,10 +359,39 @@ class SchemaCreator:
             result = self.for_constrained_field(field_definition)
         elif field_definition.inner_types and not field_definition.is_generic:
             result = self.for_object_type(field_definition)
+        elif field_definition.is_subclass_of(UploadFile):
+            result = self.for_upload_file(field_definition)
         else:
             result = create_schema_for_annotation(field_definition.annotation)
 
         return self.process_schema_result(field_definition, result) if isinstance(result, Schema) else result
+
+    def for_upload_file(self, field_definition: FieldDefinition) -> Schema:
+        """Create schema for UploadFile.
+
+        Args:
+            field_definition: A field definition instance.
+
+        Returns:
+            A Schema instance.
+        """
+
+        if field_definition.is_mapping:
+            return Schema()
+
+        file_schema = Schema(
+            type=OpenAPIType.STRING,
+            content_media_type="application/octet-stream",
+            format=OpenAPIFormat.BINARY,
+        )
+        if field_definition.kwarg_definition is None:
+            return file_schema
+
+        if field_definition.is_non_string_sequence:
+            schema = Schema(type=OpenAPIType.ARRAY, items=file_schema)
+            return Schema(type=OpenAPIType.OBJECT, properties={"file": schema})
+
+        return Schema(type=OpenAPIType.OBJECT, properties={"file": file_schema})
 
     def for_typevar(self) -> Schema:
         """Create a schema for a TypeVar.
@@ -423,6 +447,9 @@ class SchemaCreator:
         Returns:
             A schema instance.
         """
+        if field_definition.has_inner_subclass_of(UploadFile):
+            return self.for_upload_file(field_definition)
+
         if field_definition.is_mapping:
             return Schema(
                 type=OpenAPIType.OBJECT,
@@ -438,14 +465,10 @@ class SchemaCreator:
             inner_types = (f for f in field_definition.inner_types if f.annotation is not Ellipsis)
             items = list(map(self.for_field_definition, inner_types or ()))
 
-            schema = Schema(
+            return Schema(
                 type=OpenAPIType.ARRAY,
                 items=Schema(one_of=items) if len(items) > 1 else items[0],
             )
-            if field_definition.has_inner_subclass_of(UploadFile):
-                schema = Schema(type=OpenAPIType.OBJECT, properties={"file": schema})
-
-            return schema
 
         raise ImproperlyConfiguredException(
             f"Parameter '{field_definition.name}' with type '{field_definition.annotation}' could not be mapped to an Open API type. "
