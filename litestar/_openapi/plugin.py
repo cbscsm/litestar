@@ -27,20 +27,18 @@ class OpenAPIPlugin(InitPluginProtocol, ReceiveRoutePlugin):
 
     def __init__(self, app: Litestar) -> None:
         self.app = app
-        self.included_routes: list[HTTPRoute] = []
+        self.included_routes: dict[str, HTTPRoute] = {}
         self._openapi_config: OpenAPIConfig | None = None
         self._openapi_schema: OpenAPI | None = None
 
     def _build_openapi_schema(self) -> OpenAPI:
         openapi = self.openapi_config.to_openapi_schema()
-        context = OpenAPIContext(
-            openapi_config=self.openapi_config,
-            plugins=self.app.plugins.openapi,
-            schemas=openapi.components.schemas,
-        )
+        context = OpenAPIContext(openapi_config=self.openapi_config, plugins=self.app.plugins.openapi)
         openapi.paths = {
-            route.path_format or "/": create_path_item_for_route(context, route) for route in self.included_routes
+            route.path_format or "/": create_path_item_for_route(context, route)
+            for route in self.included_routes.values()
         }
+        openapi.components.schemas = context.schema_registry.generate_components_schemas()
         return openapi
 
     def provide_openapi(self) -> OpenAPI:
@@ -67,4 +65,4 @@ class OpenAPIPlugin(InitPluginProtocol, ReceiveRoutePlugin):
         if any(route_handler.resolve_include_in_schema() for route_handler, _ in route.route_handler_map.values()):
             # Force recompute the schema if a new route is added
             self._openapi_schema = None
-            self.included_routes.append(route)
+            self.included_routes[route.path] = route
