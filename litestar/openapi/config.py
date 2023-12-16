@@ -108,7 +108,11 @@ class OpenAPIConfig:
     :class:`Reference <litestar.openapi.spec.reference.Reference>` objects.
     """
     root_schema_site: Literal["redoc", "swagger", "elements", "rapidoc"] = "redoc"
-    """The static schema generator to use for the "root" path of `/schema/`."""
+    """The static schema generator to use for the "root" path of `/schema/`.
+
+    .. deprecated:: 2.5.0
+        ReDoc is no longer the default schema generator. In 3.0, the default will be Scalar.
+    """
     enabled_endpoints: set[str] = field(
         default_factory=lambda: {
             "redoc",
