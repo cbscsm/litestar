@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Built-in middleware - Litestar Framework</title><link rel="shortcut icon" href="../../_static/favicon.svg"/><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Creating Middleware" href="creating-middleware.html" /><link rel="prev" title="Using Middleware" href="using-middleware.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=76b6f612" />
+  </script><link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=15352968" />
+    <link rel="stylesheet" type="text/css" href="../../_static/shibuya.css?v=44020203" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx_paramlinks.css" />
     <link media="print" rel="stylesheet" type="text/css" href="../../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=50ea2f63" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.css?v=326d68a3" />
     <link rel="stylesheet" type="text/css" href="../../_static/litestar-sphinx-theme.css?v=f8f74789" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,8 @@
 }
 </style>
     <meta property="og:type" content="website"/><meta property="og:title" content="Built-in middleware"/>
-<meta name="twitter:card" content="summary"/>
-<meta property="og:image" content="_static/logo-light.png"/>
+  <meta property="og:image" content="_static/logo-light.png"/>
+    <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="announcement">
     <div class="announcement-inner">
@@ -130,8 +130,8 @@ data-aria-dark="Switch to auto color mode">
 </button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -192,9 +192,9 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../file_systems.html">File Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../htmx.html">HTMX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lifecycle-hooks.html">Life Cycle Hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../logging.html">Request logging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../metrics/index.html">Metrics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../metrics/open-telemetry.html">OpenTelemetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../metrics/opentelemetry.html">OpenTelemetry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../metrics/prometheus.html">Prometheus</a></li>
 </ul>
 </li>
@@ -218,7 +218,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../openapi/ui_plugins.html#building-your-own-openapi-ui-plugin">Building your own OpenAPI UI Plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../openapi/ui_plugins.html#interacting-with-the-router">Interacting with the <code class="docutils literal notranslate"><span class="pre">Router</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../openapi/ui_plugins.html#oauth2-in-swagger-ui">OAuth2 in Swagger UI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/ui_plugins.html#customizing-the-openapi-ui">Customizing the OpenAPI UI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../openapi/ui_plugins.html#cdn-and-offline-file-support">CDN and offline file support</a></li>
 </ul>
 </li>
@@ -264,24 +263,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../../reference/cli.html">cli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/config.html">config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/connection.html">connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../reference/contrib/index.html">contrib</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/htmx.html">HTMX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/jinja.html">jinja</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/jwt.html">jwt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/mako.html">mako</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/opentelemetry.html">opentelemetry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/piccolo.html">piccolo_orm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/pydantic.html">pydantic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/contrib/sqlalchemy/index.html">sqlalchemy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/contrib/sqlalchemy/plugins.html">plugins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/contrib/sqlalchemy/repository.html">repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/contrib/sqlalchemy/types.html">types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/contrib/sqlalchemy/base.html">base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../reference/contrib/sqlalchemy/dto.html">DTO</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/contrib/index.html">contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/controller.html">controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/concurrency.html">concurrency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/data_extractors.html">data_extractors</a></li>
@@ -305,12 +287,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../../reference/exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/file_system.html">file_system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/handlers.html">handlers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../reference/logging/index.html">logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/logging/config.html">config</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/logging/picologging.html">picologging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/logging/standard.html">standard</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/middleware/index.html">middleware</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/middleware/allowed_hosts.html">allowed_hosts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/middleware/authentication.html">authentication</a></li>
@@ -339,11 +315,13 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/attrs.html">attrs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/flash_messages.html">flash</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/htmx.html">htmx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/jinja.html">jinja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/mako.html">mako</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/minijinja.html">minijinja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/opentelemetry.html">opentelemetry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/problem_details.html">problem details</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/prometheus.html">prometheus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/pydantic.html">pydantic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/structlog.html">structlog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/plugins/sqlalchemy.html">sqlalchemy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/repository/index.html">repository</a><ul>
@@ -400,7 +378,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="../../topics/index.html">Topics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../topics/sync-vs-async.html">Sync vs. Async</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../topics/deployment/index.html">Deployment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../topics/deployment/nginx-unit.html">NGINX Unit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../topics/deployment/manually-with-asgi-server.html">Manually with ASGI server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../topics/deployment/docker.html">Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../topics/deployment/supervisor.html">Supervisor (Linux)</a></li>
@@ -477,14 +454,14 @@ data-aria-dark="Switch to auto color mode">
 <li><a class="reference internal" href="#compression">Compression</a><ul>
 <li><a class="reference internal" href="#gzip">GZIP</a></li>
 <li><a class="reference internal" href="#brotli">Brotli</a></li>
+<li><a class="reference internal" href="#zstd">Zstd</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#rate-limit-middleware">Rate-Limit Middleware</a></li>
-<li><a class="reference internal" href="#logging-middleware">Logging Middleware</a><ul>
-<li><a class="reference internal" href="#obfuscating-logging-output">Obfuscating Logging Output</a></li>
-<li><a class="reference internal" href="#compression-and-logging-of-response-body">Compression and Logging of Response Body</a></li>
+<li><a class="reference internal" href="#rate-limit-middleware">Rate-Limit Middleware</a><ul>
+<li><a class="reference internal" href="#using-behind-a-proxy">Using behind a proxy</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#logging-middleware">Logging Middleware</a></li>
 <li><a class="reference internal" href="#session-middleware">Session Middleware</a><ul>
 <li><a class="reference internal" href="#setting-up-the-middleware">Setting up the middleware</a></li>
 <li><a class="reference internal" href="#client-side-sessions">Client-side sessions</a></li>
@@ -498,7 +475,10 @@ data-aria-dark="Switch to auto color mode">
     <iconify-icon icon="simple-icons:github"></iconify-icon>
   </span>
   <span class="flex-grow px-2 break-all">
-    <span>litestar-org/litestar</span>
+    
+    
+      <span>litestar</span>
+    
     <span class="flex text-sm repo-stats-count">
       <span class="flex items-center pr-3">
         <iconify-icon icon="lucide:star"></iconify-icon>
@@ -547,8 +527,43 @@ data-aria-dark="Switch to auto color mode">
     </div>
   </div>
 </div><div class="flex flex-col break-words justify-between">
-      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
-        <article class="yue" role="main">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/middleware/builtin-middleware.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/middleware/builtin-middleware.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/middleware/builtin-middleware.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/middleware/builtin-middleware.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/middleware/builtin-middleware.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
           <section id="built-in-middleware">
 <h1>Built-in middleware<a class="headerlink" href="#built-in-middleware" title="Link to this heading">¶</a></h1>
 <section id="cors">
@@ -687,15 +702,15 @@ list of domains to <a class="reference internal" href="../../reference/app.html#
 <p>You can use wildcard prefixes (<code class="docutils literal notranslate"><span class="pre">*.</span></code>) in the beginning of a domain to match any combination of subdomains. Thus,
 <code class="docutils literal notranslate"><span class="pre">*.example.com</span></code> will match <code class="docutils literal notranslate"><span class="pre">www.example.com</span></code> but also <code class="docutils literal notranslate"><span class="pre">x.y.z.example.com</span></code> etc. You can also simply put <code class="docutils literal notranslate"><span class="pre">*</span></code>
 in trusted hosts, which means allow all. This is akin to turning the middleware off, so in this case it may be
-better to not enable it in the first place. You should note that a wildcard can only be used only in the prefix of a
+better to not enable it in the first place. You should note that a wildcard can only be used in the prefix of a
 domain name, not in the middle or end. Doing so will result in a validation exception being raised.</p>
 </div>
 </section>
 <section id="compression">
 <h2>Compression<a class="headerlink" href="#compression" title="Link to this heading">¶</a></h2>
-<p>HTML responses can optionally be compressed. Litestar has built in support for gzip and brotli. Gzip support is provided
-through the built-in Starlette classes, and brotli support can be added by installing the <code class="docutils literal notranslate"><span class="pre">brotli</span></code> extras.</p>
-<p>You can enable either backend by passing an instance of
+<p>HTTP responses can optionally be compressed. Litestar has support for gzip, brotli, and zstd.
+Gzip is supported by Litestar out of the box, while Brotli support can be added by installing the <code class="docutils literal notranslate"><span class="pre">brotli</span></code> extra, and Zstd support can be added by installing the <code class="docutils literal notranslate"><span class="pre">zstd</span></code> extra.</p>
+<p>You can enable any one of these backends by passing an instance of
 <a class="reference internal" href="../../reference/config.html#litestar.config.compression.CompressionConfig" title="litestar.config.compression.CompressionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompressionConfig</span></code></a> to <code class="docutils literal notranslate"><span class="pre">compression_config</span></code> of
 <a class="reference internal" href="../../reference/app.html#litestar.app.Litestar" title="litestar.app.Litestar"><code class="xref py py-class docutils literal notranslate"><span class="pre">Litestar</span></code></a>.</p>
 <section id="gzip">
@@ -705,12 +720,12 @@ the <code class="docutils literal notranslate"><span class="pre">backend</span><
 <p>You can configure the following additional gzip-specific values:</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">minimum_size</span></code>: the minimum threshold for response size to enable compression. Smaller responses will not be</dt><dd><p>compressed. Defaults is <code class="docutils literal notranslate"><span class="pre">500</span></code>, i.e. half a kilobyte.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">minimum_size</span></code>: the minimum threshold for response size to enable compression. Smaller responses will not be</dt><dd><p>compressed. Default is <code class="docutils literal notranslate"><span class="pre">500</span></code>, i.e. half a kilobyte.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">gzip_compress_level</span></code>: a range between 0-9, see the <a class="reference external" href="https://docs.python.org/3/library/gzip.html">official python docs</a>.</dt><dd><p>Defaults to <code class="docutils literal notranslate"><span class="pre">9</span></code> , which is the maximum value.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">gzip_compress_level</span></code>: a range between 0-9, see the <a class="reference external" href="https://docs.python.org/3/library/gzip.html">official python docs</a>.</dt><dd><p>Defaults to <code class="docutils literal notranslate"><span class="pre">9</span></code>, which is the maximum value.</p>
 </dd>
 </dl>
 </li>
@@ -766,6 +781,27 @@ extra (<code class="docutils literal notranslate"><span class="pre">pip</span> <
 </span></pre></div>
 </div>
 </section>
+<section id="zstd">
+<h3>Zstd<a class="headerlink" href="#zstd" title="Link to this heading">¶</a></h3>
+<p>The <a class="reference external" href="https://pypi.org/project/backports.zstd/">backports.zstd</a> package is required to run this middleware. It is available as an extra for Litestar via the <code class="docutils literal notranslate"><span class="pre">zstd</span></code> extra: (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">'litestar[zstd]'</span></code>).</p>
+<p>You can enable zstd compression of responses by passing an instance of
+<a class="reference internal" href="../../reference/config.html#litestar.config.compression.CompressionConfig" title="litestar.config.compression.CompressionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompressionConfig</span></code></a> with the <code class="docutils literal notranslate"><span class="pre">backend</span></code> parameter set to <code class="docutils literal notranslate"><span class="pre">&quot;zstd&quot;</span></code>.</p>
+<p>You can configure the following additional zstd-specific values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">minimum_size</span></code>: the minimum threshold for response size to enable compression. Smaller responses will not be compressed. Default is 500, i.e. half a kilobyte.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zstd_compress_level</span></code>: Integer &gt;= 0. Controls the compression level. Higher values increase compression ratio but are slower. A value of 0 indicates use of the library default, which is typically level 3. Default is 0.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">zstd_gzip_fallback</span></code>: Boolean indicating whether to fall back to gzip if Zstd is not supported. Default is True.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.config.compression</span><span class="w"> </span><span class="kn">import</span> <span class="n">CompressionConfig</span>
+</span><span data-line="3">
+</span><span data-line="4"><span class="n">app</span> <span class="o">=</span> <span class="n">Litestar</span><span class="p">(</span>
+</span><span data-line="5">    <span class="n">route_handlers</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+</span><span data-line="6">    <span class="n">compression_config</span><span class="o">=</span><span class="n">CompressionConfig</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s2">&quot;zstd&quot;</span><span class="p">,</span> <span class="n">zstd_gzip_fallback</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+</span><span data-line="7"><span class="p">)</span>
+</span></pre></div>
+</div>
+</section>
 </section>
 <section id="rate-limit-middleware">
 <h2>Rate-Limit Middleware<a class="headerlink" href="#rate-limit-middleware" title="Link to this heading">¶</a></h2>
@@ -789,58 +825,25 @@ the <a class="reference external" href="https://datatracker.ietf.org/doc/draft-i
 </div>
 <p>The only required configuration kwarg is <code class="docutils literal notranslate"><span class="pre">rate_limit</span></code>, which expects a tuple containing a time-unit (<code class="docutils literal notranslate"><span class="pre">&quot;second&quot;</span></code>,
 <code class="docutils literal notranslate"><span class="pre">&quot;minute&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;hour&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;day&quot;</span></code>) and a value for the request quota (integer).</p>
+<section id="using-behind-a-proxy">
+<h3>Using behind a proxy<a class="headerlink" href="#using-behind-a-proxy" title="Link to this heading">¶</a></h3>
+<p>The default mode for uniquely identifiying client uses the client’s address. When an
+application is running behind a proxy, that address will be the proxy’s, not the “real”
+address of the end-user.</p>
+<p>While there are special headers set by proxies to retrieve the remote client’s actual
+address (<code class="docutils literal notranslate"><span class="pre">X-FORWARDED-FOR</span></code>), their values should not implicitly be trusted, as any
+client is free to set them to whatever value they want. A rate-limit could easily be
+circumvented by spoofing these, and simply attaching a new, random address to each
+request.</p>
+<p>The best way to handle applications running behind a proxy is to use a middleware that
+updates the client’s address in a secure way, such as uvicorn’s
+<a class="reference external" href="https://github.com/encode/uvicorn/blob/master/uvicorn/middleware/proxy_headers.py">ProxyHeaderMiddleware</a>
+or hypercon’s <a class="reference external" href="https://hypercorn.readthedocs.io/en/latest/how_to_guides/proxy_fix.html">ProxyFixMiddleware</a> .</p>
+</section>
 </section>
 <section id="logging-middleware">
 <h2>Logging Middleware<a class="headerlink" href="#logging-middleware" title="Link to this heading">¶</a></h2>
-<p>Litestar ships with a robust logging middleware that allows logging HTTP request and responses while building on
-the Litestar’s <a class="reference internal" href="../logging.html#logging-usage"><span class="std std-ref">logging configuration</span></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.logging.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoggingConfig</span>
-</span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.middleware.logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoggingMiddlewareConfig</span>
-</span><span data-line="4">
-</span><span data-line="5"><span class="n">logging_middleware_config</span> <span class="o">=</span> <span class="n">LoggingMiddlewareConfig</span><span class="p">()</span>
-</span><span data-line="6">
-</span><span data-line="7">
-</span><span data-line="8"><span class="nd">@get</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">,</span> <span class="n">sync_to_thread</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</span><span data-line="9"><span class="k">def</span><span class="w"> </span><span class="nf">my_handler</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
-</span><span data-line="10">    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;hello&quot;</span><span class="p">:</span> <span class="s2">&quot;world&quot;</span><span class="p">}</span>
-</span><span data-line="11">
-</span><span data-line="12">
-</span><span data-line="13"><span class="n">app</span> <span class="o">=</span> <span class="n">Litestar</span><span class="p">(</span>
-</span><span data-line="14">    <span class="n">route_handlers</span><span class="o">=</span><span class="p">[</span><span class="n">my_handler</span><span class="p">],</span>
-</span><span data-line="15">    <span class="n">logging_config</span><span class="o">=</span><span class="n">LoggingConfig</span><span class="p">(),</span>
-</span><span data-line="16">    <span class="n">middleware</span><span class="o">=</span><span class="p">[</span><span class="n">logging_middleware_config</span><span class="o">.</span><span class="n">middleware</span><span class="p">],</span>
-</span><span data-line="17"><span class="p">)</span>
-</span></pre></div>
-</div>
-<p>The logging middleware uses the logger configuration defined on the application level, which allows for using any supported logging tool, depending on the configuration used
-(see <a class="reference internal" href="../logging.html#logging-usage"><span class="std std-ref">logging configuration</span></a> for more details).</p>
-<section id="obfuscating-logging-output">
-<h3>Obfuscating Logging Output<a class="headerlink" href="#obfuscating-logging-output" title="Link to this heading">¶</a></h3>
-<p>Sometimes certain data, e.g. request or response headers, needs to be obfuscated. This is supported by the middleware
-configuration:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.middleware.logging</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoggingMiddlewareConfig</span>
-</span><span data-line="2">
-</span><span data-line="3"><span class="n">logging_middleware_config</span> <span class="o">=</span> <span class="n">LoggingMiddlewareConfig</span><span class="p">(</span>
-</span><span data-line="4">    <span class="n">request_cookies_to_obfuscate</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my-custom-session-key&quot;</span><span class="p">},</span>
-</span><span data-line="5">    <span class="n">response_cookies_to_obfuscate</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my-custom-session-key&quot;</span><span class="p">},</span>
-</span><span data-line="6">    <span class="n">request_headers_to_obfuscate</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my-custom-header&quot;</span><span class="p">},</span>
-</span><span data-line="7">    <span class="n">response_headers_to_obfuscate</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;my-custom-header&quot;</span><span class="p">},</span>
-</span><span data-line="8"><span class="p">)</span>
-</span></pre></div>
-</div>
-<p>The middleware will obfuscate the headers <code class="docutils literal notranslate"><span class="pre">Authorization</span></code> and <code class="docutils literal notranslate"><span class="pre">X-API-KEY</span></code> , and the cookie <code class="docutils literal notranslate"><span class="pre">session</span></code> by default.</p>
-</section>
-<section id="compression-and-logging-of-response-body">
-<h3>Compression and Logging of Response Body<a class="headerlink" href="#compression-and-logging-of-response-body" title="Link to this heading">¶</a></h3>
-<p>If both <a class="reference internal" href="../../reference/config.html#litestar.config.compression.CompressionConfig" title="litestar.config.compression.CompressionConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">CompressionConfig</span></code></a> and
-<a class="reference internal" href="../../reference/middleware/logging.html#litestar.middleware.logging.LoggingMiddleware" title="litestar.middleware.logging.LoggingMiddleware"><code class="xref py py-class docutils literal notranslate"><span class="pre">LoggingMiddleware</span></code></a> have been defined for the application, the response
-body will be omitted from response logging if it has been compressed, even if <code class="docutils literal notranslate"><span class="pre">&quot;body&quot;</span></code> has been included in
-<a class="reference internal" href="../../reference/middleware/logging.html#litestar.middleware.logging.LoggingMiddlewareConfig.response_log_fields" title="litestar.middleware.logging.LoggingMiddlewareConfig.response_log_fields"><code class="xref py py-class docutils literal notranslate"><span class="pre">response_log_fields</span></code></a>. To force the body of
-compressed responses to be logged, set
-<a class="reference internal" href="../../reference/middleware/logging.html#litestar.middleware.logging.LoggingMiddlewareConfig.include_compressed_body" title="litestar.middleware.logging.LoggingMiddlewareConfig.include_compressed_body"><code class="xref py py-attr docutils literal notranslate"><span class="pre">include_compressed_body</span></code></a> to <code class="docutils literal notranslate"><span class="pre">True</span></code> , in
-addition to including <code class="docutils literal notranslate"><span class="pre">&quot;body&quot;</span></code> in <code class="docutils literal notranslate"><span class="pre">response_log_fields</span></code>.</p>
-</section>
+<p>This content has moved to <a class="reference internal" href="../logging.html"><span class="doc">Request logging</span></a></p>
 </section>
 <section id="session-middleware">
 <h2>Session Middleware<a class="headerlink" href="#session-middleware" title="Link to this heading">¶</a></h2>
@@ -852,7 +855,6 @@ offering client- and server-side sessions. Server-side sessions are backed by Li
 <li><p>File based sessions</p></li>
 <li><p>Redis based sessions</p></li>
 <li><p>Valkey based sessions</p></li>
-<li><p>Database based <a class="reference external" href="https://docs.advanced-alchemy.litestar.dev/latest/usage/frameworks/litestar.html#session-middleware" title="(in advanced_alchemy)"><span>Session Middleware</span></a></p></li>
 </ul>
 <section id="setting-up-the-middleware">
 <h3>Setting up the middleware<a class="headerlink" href="#setting-up-the-middleware" title="Link to this heading">¶</a></h3>
@@ -989,7 +991,7 @@ and load the appropriate data from the store</p>
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
-      <div class="sy-foot-copyright"><p>2025, Litestar Organization</p>
+      <div class="sy-foot-copyright"><p>2026, Litestar Organization</p>
   
   <p>
     Made with
@@ -1021,9 +1023,9 @@ and load the appropriate data from the store</p>
       <script>let toggleHintShow = 'Click to show';</script>
       <script>let toggleHintHide = 'Click to hide';</script>
       <script>let toggleOpenOnPrint = 'true';</script>
-      <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
       <script src="../../_static/design-tabs.js?v=f930bc37"></script>
       <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-      <script src="../../_static/shibuya.js?v=c477d091"></script>
+      <script src="../../_static/shibuya.js?v=cac61aee"></script>
       <script src="../../_static/versioning.js?v=9ab184b9"></script></body>
 </html>

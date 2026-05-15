@@ -80,7 +80,7 @@ The above example will create a jinja Environment instance, but you can also pas
 
 
     from litestar import Litestar
-    from litestar.contrib.jinja import JinjaTemplateEngine
+    from litestar.plugins.jinja import JinjaTemplateEngine
     from litestar.template import TemplateConfig
     from jinja2 import Environment, DictLoader
 
@@ -371,8 +371,8 @@ Built-in callables
 ^^^^^^^^^^^^^^^^^^
 
 ``url_for``
-    To access urls for route handlers you can use the ``url_for`` function. Its signature and behaviour
-    matches :meth:`route_reverse <litestar.app.Litestar.route_reverse>` behaviour. More details about route handler indexing
+    To access urls for route handlers, you can use the ``url_for`` function. Its signature and behaviour
+    match those of :meth:`route_reverse <litestar.app.Litestar.route_reverse>`. More details about route handler indexing
     can be found :ref:`here <usage/routing/handlers:route handler indexing>`.
 
 ``csrf_token``

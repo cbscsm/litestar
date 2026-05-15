@@ -97,11 +97,11 @@ Imports
 +----------------------------------------------------+------------------------------------------------------------------------+
 | ``starlite.TemplateConfig``                        | :class:`.template.TemplateConfig`                                      |
 +----------------------------------------------------+------------------------------------------------------------------------+
-| ``starlite.BaseLoggingConfig``                     | :class:`.logging.config.BaseLoggingConfig`                             |
+| ``starlite.BaseLoggingConfig``                     | ``litestar.logging.config.BaseLoggingConfig``                          |
 +----------------------------------------------------+------------------------------------------------------------------------+
-| ``starlite.LoggingConfig``                         | :class:`.logging.config.LoggingConfig`                                 |
+| ``starlite.LoggingConfig``                         | ``litestar.logging.config.LoggingConfig``                              |
 +----------------------------------------------------+------------------------------------------------------------------------+
-| ``starlite.StructLoggingConfig``                   | :class:`.logging.config.StructLoggingConfig`                           |
+| ``starlite.StructLoggingConfig``                   | ``litestar.logging.config.StructLoggingConfig``                        |
 +----------------------------------------------------+------------------------------------------------------------------------+
 | **Provide**                                                                                                                 |
 +----------------------------------------------------+------------------------------------------------------------------------+
@@ -295,8 +295,8 @@ SQLAlchemy 2 only.
 TODO: Migration instructions
 
 .. seealso::
-    The :doc:`/usage/databases/sqlalchemy/index` usage documentation and the
-    :doc:`/reference/contrib/sqlalchemy/index` API reference
+    SQLAlchemy usage documentation was available in v2, but SQLAlchemy support was moved into a move comprehensive standalone library for v3. See the
+    `advanced-alchemy documentation <https://advanced-alchemy.litestar.dev/>`_ for API reference
 
 
 Removal of Pydantic models
@@ -439,8 +439,8 @@ and can be used to define DTOs:
 - :class:`litestar.dto.dataclass_dto.DataclassDTO`
 - :class:`litestar.dto.msgspec_dto.MsgspecDTO`
 - :class:`advanced_alchemy.extensions.litestar.dto.SQLAlchemyDTO`
-- :class:`litestar.contrib.pydantic.PydanticDTO`
-- :class:`litestar.contrib.piccolo.PiccoloDTO`
+- ``litestar.contrib.pydantic.PydanticDTO``
+- :class:`!litestar.contrib.piccolo.PiccoloDTO`
 
 For example, to define a DTO from a dataclass:
 
@@ -588,7 +588,7 @@ Basic support for HTMX requests and responses was added with the
 ``litestar.contrib.htmx`` module.
 
 .. seealso::
-   The :doc:`/usage/htmx` usage documentation
+    The :doc:`/usage/htmx` usage documentation
 
 
 Event bus

@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Templating - Litestar Framework</title><link rel="shortcut icon" href="../_static/favicon.svg"/><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Testing" href="testing.html" /><link rel="prev" title="Stores" href="stores.html" /><script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
     setColorMode(localStorage._theme||"auto");
-  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=397bb51e" />
-    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=76b6f612" />
+  </script><link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=15352968" />
+    <link rel="stylesheet" type="text/css" href="../_static/shibuya.css?v=44020203" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx_paramlinks.css" />
     <link media="print" rel="stylesheet" type="text/css" href="../_static/print.css?v=20ff2c19" />
-    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=50ea2f63" />
+    <link rel="stylesheet" type="text/css" href="../_static/style.css?v=326d68a3" />
     <link rel="stylesheet" type="text/css" href="../_static/litestar-sphinx-theme.css?v=f8f74789" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,8 @@
 }
 </style>
     <meta property="og:type" content="website"/><meta property="og:title" content="Templating"/>
-<meta name="twitter:card" content="summary"/>
-<meta property="og:image" content="_static/logo-light.png"/>
+  <meta property="og:image" content="_static/logo-light.png"/>
+    <meta name="twitter:card" content="summary"/>
   </head>
 <body><div class="announcement">
     <div class="announcement-inner">
@@ -130,8 +130,8 @@ data-aria-dark="Switch to auto color mode">
 </button><button class="md:hidden flex items-center js-menu" aria-label="Menu" type="button" aria-controls="head-nav" aria-expanded="false">
         <div class="hamburger">
           <span class="hamburger_1"></span>
-          <span class="hamburger_2 -translate-x-2"></span>
-          <span class="hamburger_3 -translate-x-1"></span>
+          <span class="hamburger_2"></span>
+          <span class="hamburger_3"></span>
         </div>
       </button>
     </div>
@@ -192,9 +192,9 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="file_systems.html">File Systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="htmx.html">HTMX</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lifecycle-hooks.html">Life Cycle Hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging.html">Request logging</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metrics/index.html">Metrics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="metrics/open-telemetry.html">OpenTelemetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metrics/opentelemetry.html">OpenTelemetry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="metrics/prometheus.html">Prometheus</a></li>
 </ul>
 </li>
@@ -218,7 +218,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="openapi/ui_plugins.html#building-your-own-openapi-ui-plugin">Building your own OpenAPI UI Plugin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openapi/ui_plugins.html#interacting-with-the-router">Interacting with the <code class="docutils literal notranslate"><span class="pre">Router</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="openapi/ui_plugins.html#oauth2-in-swagger-ui">OAuth2 in Swagger UI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="openapi/ui_plugins.html#customizing-the-openapi-ui">Customizing the OpenAPI UI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="openapi/ui_plugins.html#cdn-and-offline-file-support">CDN and offline file support</a></li>
 </ul>
 </li>
@@ -264,24 +263,7 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../reference/cli.html">cli</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/config.html">config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/connection.html">connection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/contrib/index.html">contrib</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/htmx.html">HTMX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/jinja.html">jinja</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/jwt.html">jwt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/mako.html">mako</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/opentelemetry.html">opentelemetry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/piccolo.html">piccolo_orm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/pydantic.html">pydantic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/contrib/sqlalchemy/index.html">sqlalchemy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../reference/contrib/sqlalchemy/plugins.html">plugins</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/contrib/sqlalchemy/repository.html">repository</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/contrib/sqlalchemy/types.html">types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/contrib/sqlalchemy/base.html">base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../reference/contrib/sqlalchemy/dto.html">DTO</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/contrib/index.html">contrib</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/controller.html">controller</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/concurrency.html">concurrency</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/data_extractors.html">data_extractors</a></li>
@@ -305,12 +287,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l2"><a class="reference internal" href="../reference/exceptions.html">exceptions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/file_system.html">file_system</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/handlers.html">handlers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/logging/index.html">logging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../reference/logging/config.html">config</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/logging/picologging.html">picologging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/logging/standard.html">standard</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/middleware/index.html">middleware</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../reference/middleware/allowed_hosts.html">allowed_hosts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/middleware/authentication.html">authentication</a></li>
@@ -339,11 +315,13 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/attrs.html">attrs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/flash_messages.html">flash</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/htmx.html">htmx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/jinja.html">jinja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/mako.html">mako</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/minijinja.html">minijinja</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/opentelemetry.html">opentelemetry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/problem_details.html">problem details</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/prometheus.html">prometheus</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference/plugins/pydantic.html">pydantic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/structlog.html">structlog</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../reference/plugins/sqlalchemy.html">sqlalchemy</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/repository/index.html">repository</a><ul>
@@ -400,7 +378,6 @@ data-aria-dark="Switch to auto color mode">
 <li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Topics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../topics/sync-vs-async.html">Sync vs. Async</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../topics/deployment/index.html">Deployment</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../topics/deployment/nginx-unit.html">NGINX Unit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../topics/deployment/manually-with-asgi-server.html">Manually with ASGI server</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../topics/deployment/docker.html">Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../topics/deployment/supervisor.html">Supervisor (Linux)</a></li>
@@ -498,7 +475,10 @@ data-aria-dark="Switch to auto color mode">
     <iconify-icon icon="simple-icons:github"></iconify-icon>
   </span>
   <span class="flex-grow px-2 break-all">
-    <span>litestar-org/litestar</span>
+    
+    
+      <span>litestar</span>
+    
     <span class="flex text-sm repo-stats-count">
       <span class="flex items-center pr-3">
         <iconify-icon icon="lucide:star"></iconify-icon>
@@ -543,8 +523,43 @@ data-aria-dark="Switch to auto color mode">
     </div>
   </div>
 </div><div class="flex flex-col break-words justify-between">
-      <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
-        <article class="yue" role="main">
+      <div class="relative min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
+  <div class="copy-page-wrapper relative pb-4 lg:absolute lg:top-8 lg:right-6 xl:right-12">
+  <div id="copy-page-trigger">
+    <button
+      type="button"
+      class="js-copy px-3 py-1 inline-flex items-center gap-1"
+      data-url="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/templating.rst.txt"
+    >
+      <i class="i-lucide" data-icon="copy"></i>
+      <span>Copy page</span>
+    </button>
+    <button class="js-menu px-2 py-1" type="button" aria-label="More actions"
+      aria-haspopup="menu" aria-expanded="false" aria-controls="copy-page-content">
+      <i class="i-lucide chevron-down"></i>
+    </button>
+  </div>
+  <div id="copy-page-content" role="menu" aria-orientation="vertical" aria-hidden="true">
+    <div role="presentation">
+      <div class="flex flex-col" role="group">
+        <button class="js-copy" type="button" role="menuitem"
+          data-url="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/templating.rst.txt">
+          <span class="iconify-icon">
+            <i class="i-lucide" data-icon="copy"></i>
+          </span>
+          <span>Copy page</span>
+        </button>
+        <a role="menuitem" href="https://raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/templating.rst.txt" target="_blank" rel="nofollow"><iconify-icon icon="bi:code-slash"></iconify-icon>
+            <span>View Source</span></a><a role="menuitem" href="https://chatgpt.com/?hints=search&q=Read%20https%3A//raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/templating.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:openai"></iconify-icon>
+          <span>Open in ChatGPT</span>
+        </a><a role="menuitem" href="https://claude.ai/new?q=Read%20https%3A//raw.githubusercontent.com/litestar-org/litestar/refs/heads/main/docs/usage/templating.rst.txt%20so%20I%20can%20ask%20questions%20about%20it." target="_blank" rel="nofollow">
+          <iconify-icon icon="bi:claude"></iconify-icon>
+          <span>Open in Claude</span>
+        </a></div>
+    </div>
+  </div>
+</div><article class="yue" role="main">
           <section id="templating">
 <h1>Templating<a class="headerlink" href="#templating" title="Link to this heading">¶</a></h1>
 <p>Litestar has built-in support for <a class="reference external" href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja2</a>
@@ -593,7 +608,7 @@ Jinja</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span>
-</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
+</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="6">
 </span><span data-line="7"><span class="n">app</span> <span class="o">=</span> <span class="n">Litestar</span><span class="p">(</span>
@@ -612,7 +627,7 @@ Mako</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span>
-</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
+</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="6">
 </span><span data-line="7"><span class="n">app</span> <span class="o">=</span> <span class="n">Litestar</span><span class="p">(</span>
@@ -631,7 +646,7 @@ MiniJinja</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span>
-</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
+</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="6">
 </span><span data-line="7"><span class="n">app</span> <span class="o">=</span> <span class="n">Litestar</span><span class="p">(</span>
@@ -655,7 +670,7 @@ can be either a directory or list of directories to use for loading templates.</
 <h3>Registering a Custom Template Engine<a class="headerlink" href="#registering-a-custom-template-engine" title="Link to this heading">¶</a></h3>
 <p>The above example will create a jinja Environment instance, but you can also pass in your own instance.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span>
-</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
+</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">jinja2</span><span class="w"> </span><span class="kn">import</span> <span class="n">Environment</span><span class="p">,</span> <span class="n">DictLoader</span>
 </span><span data-line="5">
@@ -678,52 +693,6 @@ can not be used in conjunction with the <code class="docutils literal notranslat
 <p>If you wish to use another templating engine, you can easily do so by implementing
 <a class="reference internal" href="../reference/template.html#litestar.template.TemplateEngineProtocol" title="litestar.template.TemplateEngineProtocol"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateEngineProtocol</span></code></a>. This class accepts a generic
 argument which should be the template class, and it specifies two methods:</p>
-<div class="sd-tab-set docutils">
-<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="3.8" for="sd-tab-item-6">
-Python 3.8+</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">List</span>
-</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectoryPath</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># the template class of the respective library</span>
-</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">some_lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">SomeTemplate</span>
-</span><span data-line="6">
-</span><span data-line="7">
-</span><span data-line="8"><span class="k">class</span><span class="w"> </span><span class="nc">TemplateEngineProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">[</span><span class="n">SomeTemplate</span><span class="p">]):</span>
-</span><span data-line="9">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">DirectoryPath</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="n">DirectoryPath</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span data-line="10"><span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds a template engine.&quot;&quot;&quot;</span>
-</span><span data-line="11">        <span class="o">...</span>
-</span><span data-line="12">
-</span><span data-line="13">    <span class="k">def</span><span class="w"> </span><span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SomeTemplate</span><span class="p">:</span>
-</span><span data-line="14"><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads the template with template_name and returns it.&quot;&quot;&quot;</span>
-</span><span data-line="15">        <span class="o">...</span>
-</span></pre></div>
-</div>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="3.9" for="sd-tab-item-7">
-Python 3.9+</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span><span class="p">,</span> <span class="n">Union</span>
-</span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectoryPath</span>
-</span><span data-line="3">
-</span><span data-line="4"><span class="c1"># the template class of the respective library</span>
-</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">some_lib</span><span class="w"> </span><span class="kn">import</span> <span class="n">SomeTemplate</span>
-</span><span data-line="6">
-</span><span data-line="7">
-</span><span data-line="8"><span class="k">class</span><span class="w"> </span><span class="nc">TemplateEngineProtocol</span><span class="p">(</span><span class="n">Protocol</span><span class="p">[</span><span class="n">SomeTemplate</span><span class="p">]):</span>
-</span><span data-line="9">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">directory</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">DirectoryPath</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">DirectoryPath</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</span><span data-line="10"><span class="w">        </span><span class="sd">&quot;&quot;&quot;Builds a template engine.&quot;&quot;&quot;</span>
-</span><span data-line="11">        <span class="o">...</span>
-</span><span data-line="12">
-</span><span data-line="13">    <span class="k">def</span><span class="w"> </span><span class="nf">get_template</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">template_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SomeTemplate</span><span class="p">:</span>
-</span><span data-line="14"><span class="w">        </span><span class="sd">&quot;&quot;&quot;Loads the template with template_name and returns it.&quot;&quot;&quot;</span>
-</span><span data-line="15">        <span class="o">...</span>
-</span></pre></div>
-</div>
-</div>
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="3.10" for="sd-tab-item-8">
-Python 3.10+</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Protocol</span>
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">pydantic</span><span class="w"> </span><span class="kn">import</span> <span class="n">DirectoryPath</span>
 </span><span data-line="3">
@@ -741,8 +710,6 @@ Python 3.10+</label><div class="sd-tab-content docutils">
 </span><span data-line="15">        <span class="o">...</span>
 </span></pre></div>
 </div>
-</div>
-</div>
 <p>Once you have your custom engine you can register it as you would the built-in engines.</p>
 </section>
 <section id="accessing-the-template-engine-instance">
@@ -750,30 +717,30 @@ Python 3.10+</label><div class="sd-tab-content docutils">
 <p>If you need to access the template engine instance, you can do so via the
 <a class="reference internal" href="../reference/template.html#litestar.template.TemplateConfig" title="litestar.template.TemplateConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">TemplateConfig.engine</span></code></a> attribute:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-6">
 Jinja</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="n">template_config</span> <span class="o">=</span> <span class="n">TemplateConfig</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">JinjaTemplateEngine</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s2">&quot;templates&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-10">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-7">
 Mako</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="n">template_config</span> <span class="o">=</span> <span class="n">TemplateConfig</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">MakoTemplateEngine</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s2">&quot;templates&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-11">
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-8">
 MiniJinja</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="n">template_config</span> <span class="o">=</span> <span class="n">TemplateConfig</span><span class="p">(</span><span class="n">engine</span><span class="o">=</span><span class="n">MiniJinjaTemplateEngine</span><span class="p">,</span> <span class="n">directory</span><span class="o">=</span><span class="s2">&quot;templates&quot;</span><span class="p">)</span>
@@ -788,13 +755,13 @@ MiniJinja</label><div class="sd-tab-content docutils">
 <p>Once you have a template engine registered you can return <a class="reference internal" href="../reference/response/index.html#litestar.response.Template" title="litestar.response.Template"><code class="xref py py-class docutils literal notranslate"><span class="pre">templates</span> <span class="pre">responses</span></code></a> from
 your route handlers:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-12">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-9">
 Jinja</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
+</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="7">
@@ -817,15 +784,15 @@ Jinja</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-13">
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-10">
 Mako</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="4">
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
+</span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
 </span><span data-line="7"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="8"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="9">
@@ -848,15 +815,15 @@ Mako</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-14">
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-11">
 MiniJinja</label><div class="sd-tab-content docutils">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="4">
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
+</span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span>
 </span><span data-line="7"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="8"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="9">
@@ -894,8 +861,8 @@ engine’s <code class="docutils literal notranslate"><span class="pre">render</
 containing the template. The latter is useful if you want to define the template inline
 for small templates or <a class="reference internal" href="htmx.html"><span class="doc">HTMX</span></a> responses for example.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-15">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
 File name</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Template via file</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
@@ -906,8 +873,8 @@ File name</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-16">
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
 String</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Template via string</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
@@ -932,8 +899,8 @@ template context under <code class="docutils literal notranslate"><span class="p
 <p>Accessing <code class="docutils literal notranslate"><span class="pre">app.state.key</span></code> for example would look like this:
 &lt;strong&gt;check_context_key: &lt;/strong&gt;{{ check_context_key() }}</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-17">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-14">
 Jinja</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="2">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -945,8 +912,8 @@ Jinja</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-18">
+<input id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-15">
 Mako</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1">html
 </span><span data-line="2"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
@@ -959,8 +926,8 @@ Mako</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-19">
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-16">
 MiniJinja</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="2">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -981,8 +948,8 @@ MiniJinja</label><div class="sd-tab-content docutils">
 you first need to configure <a class="reference internal" href="middleware/builtin-middleware.html#csrf"><span class="std std-ref">CSRF protection</span></a>.
 With that in place, you can now insert the CSRF input field inside an HTML form:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-20">
+<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-17">
 Jinja</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="2">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1000,8 +967,8 @@ Jinja</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-21">
+<input id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-18">
 Mako</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="2">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1019,8 +986,8 @@ Mako</label><div class="sd-tab-content docutils">
 </span></pre></div>
 </div>
 </div>
-<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-22">
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-19">
 MiniJinja</label><div class="sd-tab-content docutils">
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span data-line="2">    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -1068,8 +1035,8 @@ callables that are ran inside the template. Litestar builds on this and offers s
 <section id="built-in-callables">
 <h3>Built-in callables<a class="headerlink" href="#built-in-callables" title="Link to this heading">¶</a></h3>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">url_for</span></code></dt><dd><p>To access urls for route handlers you can use the <code class="docutils literal notranslate"><span class="pre">url_for</span></code> function. Its signature and behaviour
-matches <a class="reference internal" href="../reference/app.html#litestar.app.Litestar.route_reverse" title="litestar.app.Litestar.route_reverse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">route_reverse</span></code></a> behaviour. More details about route handler indexing
+<dt><code class="docutils literal notranslate"><span class="pre">url_for</span></code></dt><dd><p>To access urls for route handlers, you can use the <code class="docutils literal notranslate"><span class="pre">url_for</span></code> function. Its signature and behaviour
+match those of <a class="reference internal" href="../reference/app.html#litestar.app.Litestar.route_reverse" title="litestar.app.Litestar.route_reverse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">route_reverse</span></code></a>. More details about route handler indexing
 can be found <a class="reference internal" href="routing/handlers.html#route-handler-indexing"><span class="std std-ref">here</span></a>.</p>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">csrf_token</span></code></dt><dd><p>This function returns the request’s unique <a class="reference internal" href="middleware/builtin-middleware.html#csrf"><span class="std std-ref">CSRF token</span></a> You can use this
@@ -1089,8 +1056,8 @@ for the two built in engines, and it can be used to register callables that will
 should expect one argument - the context dictionary. It can be any callable - a function, method, or class that defines
 the call method. For example:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-23" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-23">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="jinja" for="sd-tab-item-20">
 Jinja</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">template_functions.py</span></code></span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
@@ -1098,7 +1065,7 @@ Jinja</label><div class="sd-tab-content docutils">
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
+</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.jinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">JinjaTemplateEngine</span>
 </span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="7"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="8">
@@ -1140,8 +1107,8 @@ Jinja</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-24">
+<input id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="mako" for="sd-tab-item-21">
 Mako</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">template_functions.py</span></code></span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
@@ -1149,7 +1116,7 @@ Mako</label><div class="sd-tab-content docutils">
 </span><span data-line="2"><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
 </span><span data-line="3">
 </span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
+</span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.mako</span><span class="w"> </span><span class="kn">import</span> <span class="n">MakoTemplateEngine</span>
 </span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="7"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="8">
@@ -1191,15 +1158,15 @@ Mako</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-25">
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" data-sync-group="tab" data-sync-id="minijinja" for="sd-tab-item-22">
 Minijinja</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">template_functions.py</span></code></span><a class="headerlink" href="#id12" title="Link to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span data-line="1"><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
 </span><span data-line="2">
 </span><span data-line="3"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar</span><span class="w"> </span><span class="kn">import</span> <span class="n">Litestar</span><span class="p">,</span> <span class="n">get</span>
-</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.contrib.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span><span class="p">,</span> <span class="n">StateProtocol</span>
+</span><span data-line="4"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.plugins.minijinja</span><span class="w"> </span><span class="kn">import</span> <span class="n">MiniJinjaTemplateEngine</span><span class="p">,</span> <span class="n">StateProtocol</span>
 </span><span data-line="5"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.response</span><span class="w"> </span><span class="kn">import</span> <span class="n">Template</span>
 </span><span data-line="6"><span class="kn">from</span><span class="w"> </span><span class="nn">litestar.template.config</span><span class="w"> </span><span class="kn">import</span> <span class="n">TemplateConfig</span>
 </span><span data-line="7">
@@ -1269,7 +1236,7 @@ you’ll see</p>
 <footer class="sy-foot">
   <div class="sy-foot-inner sy-container mx-auto">
     <div class="sy-foot-reserved md:flex justify-between items-center">
-      <div class="sy-foot-copyright"><p>2025, Litestar Organization</p>
+      <div class="sy-foot-copyright"><p>2026, Litestar Organization</p>
   
   <p>
     Made with
@@ -1301,9 +1268,9 @@ you’ll see</p>
       <script>let toggleHintShow = 'Click to show';</script>
       <script>let toggleHintHide = 'Click to hide';</script>
       <script>let toggleOpenOnPrint = 'true';</script>
-      <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+      <script src="../_static/togglebutton.js?v=1ae7504c"></script>
       <script src="../_static/design-tabs.js?v=f930bc37"></script>
       <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-      <script src="../_static/shibuya.js?v=c477d091"></script>
+      <script src="../_static/shibuya.js?v=cac61aee"></script>
       <script src="../_static/versioning.js?v=9ab184b9"></script></body>
 </html>

@@ -409,8 +409,8 @@
         :type: feature
         :pr: 2969
 
-        The option :attr:`~litestar.logging.config.LoggingConfig.configure_root_logger` was
-        added to :class:`~litestar.logging.config.LoggingConfig` attribute. It is enabled by
+        The option ``litestar.logging.config.LoggingConfig.configure_root_logger`` was
+        added to ``litestar.logging.config.LoggingConfig`` attribute. It is enabled by
         default to not implement a breaking change.
 
         When set to ``False`` the ``root`` logger will not be modified for ``logging``
@@ -844,7 +844,7 @@
         :pr: 2919
 
         Using a method on
-        :attr:`Request.logger <litestar.connection.ASGIConnection.logger>` when not
+        ``Request.logger`` when not
         setting a ``logging_config`` on the application would result in a non-descriptive
         :exc:`TypeError`. An :exc:`ImproperlyConfiguredException` with an explanation is
         now raised instead.
@@ -1600,7 +1600,7 @@
         :pr: 2404
         :issue: 2373
 
-        A new :class:`~litestar.contrib.pydantic.PydanticPlugin` has been added, which
+        A new ``PydanticPlugin`` has been added, which
         can be used to configure Pydantic behaviour. Currently it supports setting a
         ``prefer_alias`` option, which will pass the ``by_alias=True`` flag to Pydantic
         when exporting models, as well as generate schemas accordingly.
@@ -1788,12 +1788,12 @@
         Converts the repository to use :func:`lambda_stmt <sqlalchemy.sql.expression.lambda_stmt>`
         instead of the normal ``select``
 
-    .. change:: SQLAlchemy: Swap to the `advanced_alchemy <https://docs.advanced-alchemy.jolt.rs>`_ implementations
+    .. change:: SQLAlchemy: Swap to the `advanced_alchemy <https://advanced-alchemy.litestar.dev>`_ implementations
         :type: feature
         :pr: 2312
 
         Swaps the internal SQLAlchemy repository to use the external
-        `advanced_alchemy <https://docs.advanced-alchemy.jolt.rs>`_ library implementations
+        `advanced_alchemy <https://advanced-alchemy.litestar.dev>`_ library implementations
 
     .. change:: Remove usages of deprecated ``ExceptionHandlerMiddleware`` ``debug`` parameter
         :type: bugfix
@@ -1948,7 +1948,7 @@
         :pr: 2145
 
         Add missing default values for the ``receive`` and ``send`` parameters of
-        :class:`~litestar.contrib.htmx.request.HTMXRequest`.
+        ``litestar.contrib.htmx.request.HTMXRequest``.
 
     .. change:: DTO: Excluded attributes accessed during transfer
         :type: bugfix
@@ -2236,7 +2236,7 @@
         :pr: 1896
 
         Add support for piccolo ORM with the
-        :class:`~litestar.contrib.piccolo.PiccoloDTO`.
+        :class:`!litestar.contrib.piccolo.PiccoloDTO`.
 
     .. change:: OpenAPI: Allow setting ``OpenAPIController.path`` from ```OpenAPIConfig``
         :type: feature
@@ -2612,7 +2612,7 @@
         :type: feature
         :pr: 1780
 
-        When using the :class:`litestar.contrib.sqlalchemy.types.JsonB` type with an
+        When using the ``litestar.contrib.sqlalchemy.types.JsonB`` type with an
         Oracle Database engine, a JSON check constraint will be created for that
         column.
 
@@ -2703,8 +2703,8 @@
         DTO factories for `msgspec <https://jcristharif.com/msgspec/>`_ and
         `Pydantic <https://docs.pydantic.dev/latest/>`_ have been added:
 
-        - :class:`~litestar.contrib.msgspec.MsgspecDTO`
-        - :class:`~litestar.contrib.pydantic.PydanticDTO`
+        - :class:`~litestar.dto.msgspec_dto.MsgspecDTO`
+        - :class:`~litestar.plugins.pydantic.PydanticDTO`
 
     .. change:: DTOs: Arbitrary generic wrappers
         :pr: 1801
@@ -3329,8 +3329,8 @@
         :type: feature
         :pr: 1488
 
-        Pass the template context to the :class:`Template <litestar.response_containers.Template>` returned by
-        :class:`htmx.Response <litestar.contrib.htmx.response>`.
+        Pass the template context to the ``Template`` returned by
+        ``htmx.Response``.
 
 
     .. change:: OpenAPI support for attrs and msgspec classes
@@ -3610,11 +3610,11 @@
         :type: feature
         :pr: 1395
 
-        A :class:`SQLAlchemyInitPlugin <litestar.contrib.sqlalchemy.plugins.SQLAlchemyInitPlugin>` was added,
+        A ``SQLAlchemyInitPlugin`` was added,
         providing support for managed synchronous and asynchronous sessions.
 
-        .. seealso::
-            :doc:`/usage/databases/sqlalchemy/index`
+        .. note::
+            SQLAlchemy documentation was available in v2 but SQLAlchemy support was moved into a standalone library in v3.
 
     .. change:: Attrs signature modelling
         :type: feature
